@@ -9,7 +9,7 @@ The program receives numbers one at a time and, after each number, predicts a ra
 
 The goal is to predict the next number successfully as often as possible while keeping the range narrow. A wider range earns a lower score for a correct prediction. Individual predictions are not guaranteed to succeed.
 
-2. Input and output
+.. 2. Input and output
 
 Read one integer per line from standard input (stdin).
 
