@@ -1,15 +1,15 @@
-## Guess-it — Product Requirements Document
+# Guess-it — Product Requirements Document
 
 Status: agreed initial approach, before implementation.
 Implementation language: Go.
 
-# 1. Goal
+## 1. Goal
 
 The program receives numbers one at a time and, after each number, predicts a range for the next number. It uses only numbers already received.
 
 The goal is to predict the next number successfully as often as possible while keeping the range narrow. A wider range earns a lower score for a correct prediction. Individual predictions are not guaranteed to succeed.
 
-# 2. Input and output
+## 2. Input and output
 
 Read one integer per line from standard input (stdin).
 
@@ -27,7 +27,7 @@ Output format example, not a specific calculation:
 
 70 90
 
-# 3. Sliding window
+## 3. Sliding window
 
 Use up to the latest N numbers. Select N through testing.
 
@@ -57,7 +57,7 @@ Numbers used
 
 Produce the first prediction as soon as the first number arrives. Do not wait for the window to fill, and do not retain the first number forever.
 
-# 4. Initial prediction method
+## 4. Initial prediction method
 
 Reuse the logic of average(), variance(), and standardDeviation() from math-skills.
 
@@ -83,7 +83,7 @@ With a single number or identical numbers, the standard deviation is zero. The m
 
 This is a baseline method to evaluate, not a proven optimal solution.
 
-# 5. Error handling
+## 5. Error handling
 
 For invalid input, write an explanatory message to stderr and terminate with failure. Do not produce a prediction for the invalid line.
 
@@ -93,7 +93,7 @@ Invalid input on line 4: "hello" is not a valid integer.
 
 Report input-reading errors to stderr as well. Exact message wording may be improved later.
 
-# 6. Organization and performance
+## 6. Organization and performance
 
 Keep main() clean and focused on coordination.
 
@@ -107,7 +107,7 @@ Make each prediction available to the tester before waiting for the next number.
 
 Start with a simple implementation and optimize where testing demonstrates a need.
 
-# 7. Testing and acceptance
+## 7. Testing and acceptance
 
 Verify that:
 
@@ -129,7 +129,7 @@ Evaluate the program against Data 1, Data 2, and Data 3 in the provided tester. 
 
 No numerical target score has been defined yet, and the tester has not been run as part of this PRD.
 
-# 8. Delivery
+## 8. Delivery
 
 Provide a student/ folder at the root of the supplied tester, containing the files required to run the program.
 
@@ -139,7 +139,7 @@ Script paths must work when invoked from the tester root directory.
 
 Confirm the exact script location and invocation against the tester instructions during integration.
 
-# 9. Open settings
+## 9. Open settings
 
 Window size N.
 
