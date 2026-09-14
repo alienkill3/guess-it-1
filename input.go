@@ -24,7 +24,7 @@ func readInput() {
 			numbers = numbers[1:]
 		}
 		averageValue := average(numbers)
-		fmt.Println(averageValue)
-
+		varianceValue := variance(numbers, averageValue)
+		fmt.Println(averageValue, varianceValue)
 	}
 }

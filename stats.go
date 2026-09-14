@@ -9,3 +9,15 @@ func average(numbers []int) float64 {
 
 	return float64(sum) / float64(len(numbers))
 }
+func variance(numbers []int, average float64) float64 {
+	var sum float64
+
+	for _, number := range numbers {
+		difference := float64(number) - average
+		square := difference * difference
+
+		sum += square
+	}
+
+	return sum / float64(len(numbers))
+}
