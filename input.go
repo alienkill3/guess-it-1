@@ -9,6 +9,7 @@ import (
 
 func readInput() {
 	scanner := bufio.NewScanner(os.Stdin)
+	numbers := []int{}
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -17,7 +18,8 @@ func readInput() {
 			fmt.Fprintln(os.Stderr, "Invalid input. Please enter a valid integer.")
 			return
 		}
-		fmt.Println(number)
+		numbers = append(numbers, number)
+		fmt.Println(numbers)
 
 	}
 }
