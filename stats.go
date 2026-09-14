@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 func average(numbers []int) float64 {
 	sum := 0
 
@@ -20,4 +22,7 @@ func variance(numbers []int, average float64) float64 {
 	}
 
 	return sum / float64(len(numbers))
+}
+func standardDeviation(variance float64) float64 {
+	return math.Sqrt(variance)
 }
