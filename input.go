@@ -29,4 +29,9 @@ func readInput() {
 		lower, upper := predictRange(averageValue, stdDevValue)
 		fmt.Println(lower, upper)
 	}
+	err := scanner.Err()
+
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Error reading input:", err)
+	}
 }
