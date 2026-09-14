@@ -10,13 +10,15 @@ import (
 func readInput() error {
 	scanner := bufio.NewScanner(os.Stdin)
 	numbers := []int{}
+	lineNumber := 0
 
 	for scanner.Scan() {
+		lineNumber++
 		line := scanner.Text()
 
 		number, err := strconv.Atoi(line)
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "Invalid input. Please enter a valid integer.")
+			fmt.Fprintf(os.Stderr, "Invalid input on line %d: %q is not a valid integer.\n", lineNumber, line)
 			return err
 		}
 		numbers = append(numbers, number)
