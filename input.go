@@ -23,7 +23,8 @@ func readInput() {
 		if len(numbers) > 3 {
 			numbers = numbers[1:]
 		}
-		fmt.Println(numbers)
+		averageValue := average(numbers)
+		fmt.Println(averageValue)
 
 	}
 }
