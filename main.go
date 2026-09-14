@@ -1,5 +1,11 @@
 package main
 
+import "os"
+
 func main() {
-	readInput()
+
+	err := readInput()
+	if err != nil {
+		os.Exit(1)
+	}
 }

@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func readInput() {
+func readInput() error {
 	scanner := bufio.NewScanner(os.Stdin)
 	numbers := []int{}
 
@@ -17,7 +17,7 @@ func readInput() {
 		number, err := strconv.Atoi(line)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, "Invalid input. Please enter a valid integer.")
-			return
+			return err
 		}
 		numbers = append(numbers, number)
 		if len(numbers) > 3 {
@@ -33,5 +33,7 @@ func readInput() {
 
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Error reading input:", err)
+		return err
 	}
+	return nil
 }
