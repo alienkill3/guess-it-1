@@ -4,7 +4,7 @@ import "math"
 
 func predictRange(averageValue float64, stdDevValue float64) (int, int) {
 
-	margin := stdDevValue
+	margin := stdDevValue * 0.1
 
 	if margin < 1 {
 		margin = 1
